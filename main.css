@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    background: center / cover url(images/bg1.jpg);
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+main{
+    position: relative;
+    height: 100%;
+}
+
+.heading-primary {
+    padding: 1.5rem;
+    color: white;
+    background-color: rgb(92, 204, 222);
+    position: absolute;
+    left: 50%;
+    top: 24%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    user-select: none;
+    font-size: 2rem;
+}
+
+
+/* navigation */
+.nav__checkbox {
+    display: none;
+}
+
+
+.nav__bg {
+    background-color: white;
+    padding: 4rem;
+    position: relative;
+    user-select: none;
+}
+
+.nav__list--middle-positioned {
+    display: none;
+}
+
+
+.nav__button::after {
+    font-family: fontawesome;
+    content: "\f0c9";
+    display: inline-block;
+    position: absolute;
+    left: 2.9rem;
+    top: 2rem;
+    font-size: 4rem;
+}
+
+.nav__checkbox:checked + .nav__button::after {
+    content: "\58";
+}
+
+
+
+.nav__list{
+    width: 100%;
+    position: relative;
+    transition: all .25s;
+    user-select: none;
+}
+.nav__list,
+.nav__list li,
+.nav__list li a{
+    opacity: 0;
+    left: -30%; 
+    
+}
+.nav__checkbox:checked ~ .nav__list,
+.nav__checkbox:checked ~ .nav__list li,
+.nav__checkbox:checked ~ .nav__list li a {
+    opacity: 1;
+    left: 0;
+}
+
+
+li {
+    background-color: rgb(232, 150, 121);
+    padding: 2rem;
+    list-style: none;
+}
+
+li:hover {
+    background-color: rgb(91, 204, 222);
+}
+
+a {
+    font-size: 3rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+}
+
+
+
+@media (min-width: 992px) {
+
+    .nav__form-wrapper {
+        display: none;
+    }
+
+    .nav__list--middle-positioned {
+        display: block;
+        background-color: white;
+    }
+
+    .nav__list--middle-positioned li{
+        display: inline-block;
+    }
+
+    .heading-primary {
+        font-size: 3rem;
+        top: 50%;
+    }
+}
